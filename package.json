@@ -1,0 +1,13 @@
+{
+    "name": "hendless",
+    "version": "0.0.1",
+    "description": "hendless",
+    "contributors": [{
+        "name": "junmer",
+        "email": "junmer@foxmail.com"
+    }],
+    "dependencies": {
+        "simplecrawler" : "~0.3.6"
+    },
+    "repository": "git://github.com/junmer/hendless.git"
+}

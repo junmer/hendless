@@ -6,3 +6,6 @@ Thumbs.db
 
 # Mac crap
 .DS_Store
+
+# fe dep
+fe/dep

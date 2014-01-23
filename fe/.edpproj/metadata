@@ -12,6 +12,10 @@
         "saber-run": "0.x",
         "saber-emitter": "0.x",
         "saber-ajax": "0.x",
-        "saber-string": "0.x"
+        "saber-string": "0.x",
+        "etpl": "2.x",
+        "saber-router": "0.x",
+        "saber-firework": "0.x",
+        "saber-tap": "0.x"
     }
 }

@@ -22,16 +22,28 @@ app.use(route.get('/list', list));
 app.use(route.get('/list/:id', list));
 app.use(route.get('/thing/:key', thing));
 
-// serve files from ./public
+// serve files from ./fe
 app.use(serve(require('path').dirname(__dirname) + '/fe'));
+
+// to ejson
+function toEjsonString(data) {
+
+	return JSON.stringify({
+		status: 0,
+		data: data
+	});
+
+}
 
 // route definitions
 function *list(page) {
-    this.body = JSON.stringify(yield db.list(page));
+	this.type = 'json';
+	this.body = toEjsonString( yield db.list(page) );
 }
 
 function *thing(key) {
-    this.body = JSON.stringify(yield db.get(key));
+	this.type = 'json';
+	this.body = toEjsonString( yield db.get(key) );
 }
 
 // listen

@@ -2,13 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>[Please input title]</title>
+    <title>Saber Hendless</title>
     <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-6/esl.js"></script> 
     
     <script>
     require.config({
         'baseUrl': 'src',
-        'paths': {},
+        'paths': {
+            'text': 'common/text',
+            'tpl': '../dep/etpl/2.0.8/src/tpl'
+        },
         'packages': [
             {
                 'name': 'saber-viewport',
@@ -49,6 +52,25 @@
                 'name': 'saber-string',
                 'location': '../dep/saber-string/0.2.0-0/src',
                 'main': 'main'
+            },
+            {
+                'name': 'etpl',
+                'location': '../dep/etpl/2.0.8/src',
+                'main': 'main'
+            },
+            {
+                'name': 'saber-router',
+                'location': '../dep/saber-router/0.1.0-beta.5/src',
+                'main': 'main'
+            },
+            {
+                'name': 'saber-firework',
+                'location': '../dep/saber-firework/0.1.0-beta.4/src'
+            },
+            {
+                'name': 'saber-tap',
+                'location': '../dep/saber-tap/0.1.0-3/src',
+                'main': 'tap'
             }
         ]
     });
@@ -57,6 +79,14 @@
 </head>
 
 <body>
-[Page Body]
+    <div id="viewport"></div>
+    <div class="global-loading show">
+        <div class="icon"></div>
+    </div>
+    <script>
+        require(['app'], function (app) {
+            app.init();
+        });
+    </script>
 </body>
 </html>

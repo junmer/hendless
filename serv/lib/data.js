@@ -29,7 +29,6 @@ function list(page) {
     var res = {
         list: [],
         page: isNaN(+page) ? 0 : +page
-        // total: data.total
     };
 
     if ( res.page > data.listSize ) {
@@ -40,6 +39,8 @@ function list(page) {
         page * data.pageSize, 
         data.pageSize
     );
+
+    res.hasNextPage = data.listSize > res.page + 1;
 
     return res;
 

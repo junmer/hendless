@@ -121,7 +121,7 @@ define(function (require) {
         var pager = dom.query('.pager', view.main);
 
         // 点击下一页
-        pager.addEventListener('click', function (e) {
+        pager.addEventListener('click', function () {
 
             pager.innerHTML = ''
                 + '查看下一页 '
@@ -147,9 +147,9 @@ define(function (require) {
             }
 
             showLoading();
-            
+
             view.emit('showDetail', {
-                cid: list.getAttribute('data-key') || '0'
+                key: list.getAttribute('data-key') || '0'
             });
             
         });

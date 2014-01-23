@@ -247,7 +247,7 @@ define(function (require) {
 
     // 加载action配置
     loadConfig(require('./list/config'));
-    // loadConfig(require('./thing/config'));
+    loadConfig(require('./thing/config'));
 
     /*
     // 全局错误页面

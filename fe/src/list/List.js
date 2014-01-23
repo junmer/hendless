@@ -1,6 +1,6 @@
 /**
- * @file 评论列表Action
- * @author menglingjun(menglingjun@baidu.com)
+ * @file 列表Action
+ * @author junmer(junmer@foxmail.com)
  */
 
 define(function (require) {

@@ -1,16 +1,17 @@
 <!-- target: list -->
 
 <!-- for: ${list} as ${thing}, ${index} -->
-<li>${index}: ${thing.name}</li>
+<li data-key="${thing.key}">
+    <img src="${thing.image}" />
+    ${index}: ${thing.name}
+</li>
 <!-- /for -->
 
 <!-- target: main -->
 <article>
 
     <ul class="list-group">
-        <!-- for: ${list} as ${thing}, ${index} -->
-        <li>${index}: ${thing.name}</li>
-        <!-- /for -->
+        <!-- import: list -->
     </ul>
     
     <a class="pager" role="button" data-page="0" >
@@ -24,5 +25,4 @@
     <h1 class="title">
         标题
     </h1>
-    <a class="prev" href="">返回</a>
 </nav>

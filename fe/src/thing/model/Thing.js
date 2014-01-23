@@ -7,15 +7,15 @@ define(function (require) {
 
     var BaseModel = require('saber-firework/Model');
 
-    var listEntity = require('./listEntity');   // 实体
-
     var etpl = require('etpl');
 
     var etplEngine = new etpl.Engine();
 
-    var tpl = require('text!../view/list.tpl');
+    var tpl = require('text!../view/thing.tpl');
 
     etplEngine.compile(tpl);
+
+    var thingEntity = require('./thingEntity');   // 实体
 
     function Model() {
         BaseModel.call('list');
@@ -25,19 +25,18 @@ define(function (require) {
 
 
     /**
-     * 获取列表
+     * 获取物品
      *
-     * @param {string} id 
+     * @param {string} key 
      */
-    Model.prototype.fetch = function (id) {
+    Model.prototype.fetch = function (key) {
 
         var tpl = { // 模板
             nav: etplEngine.getRenderer('nav'), // 导航
-            list: etplEngine.getRenderer('list'), // 列表
             main: etplEngine.getRenderer('main') // 主
         };
 
-        return listEntity.get(id)
+        return thingEntity.get(key)
             .then(function (data) {
 
                 return {
